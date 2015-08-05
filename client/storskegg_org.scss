@@ -1,5 +1,134 @@
+@import "_settings.scss";
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font: 10pt/12pt normal 'Helvetica Neue';
+
+  &>header {
+    position: relative;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+article {
+  border-left: 1rem solid #666;
+  padding-left: 1rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  &::before {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  &.objective {
+    &::before {
+      content: 'Objective';
+    }
+  }
+
+  &.experience {
+    &::before {
+      content: 'Experience';
+    }
+  }
+
+  &.skills {
+    &::before {
+      content: 'Skills';
+    }
+  }
+}
+
+section {
+  header {
+    margin-top: 0.5rem;
+  }
+}
+
+ul, ol {
+  &.unstyled {
+    list-style-type: none;
+  }
+}
+
+.column,
+.columns {
+  width: 100%;
+  column-width: auto;
+  column-gap: 1rem;
+  column-fill: balance;
+
+  &.divided {
+    column-rule: 1pt solid #666;
+  }
+
+  &.one {
+    column-count: 1;
+  }
+
+  &.two {
+    column-count: 2;
+  }
+}
+
+.skills {
+  ul {
+    padding-left: 0;
+
+    li {
+
+      padding-left: 1rem;
+
+      &::first-line {
+        padding-left: 1rem;
+      }
+
+      header {
+        display: inline-block;
+        font-weight: bold;
+
+        &::after {
+          content: ':';
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.accomplishments,
+.responsibilities {
+  padding-left: 2rem;
+
+  li {
+    list-style-type: square;
+  }
+}
+
+.duration {
+  float: right;
+}
+small {
+  color: #666;
+  letter-spacing: 0.05rem;
+  padding-left: 0.5rem;
+}
+.meta,
+.links {
+  break-inside: avoid;
+
+  ul {
+    padding: 0;
+  }
 }
 
 @media only screen {
@@ -41,133 +170,13 @@
     padding: 0.5in;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 5px 15px 3px rgba(0, 0, 0, 0.5);
-
-    font: 10pt/12pt normal 'Helvetica Neue';
-
-    &>header {
-      position: relative;
-    }
   }
 }
 
-@media screen {
-  body {
-    & > header {
-      h1 {}
-    }
-  }
-
-  p {
-    line-height: 1.15rem;
-  }
-
-  article {
-    border-left: 1rem solid #666;
-    padding-left: 1rem;
-
-    &:not(:last-of-type) {
-      margin-bottom: 1rem;
-    }
-
-    &::before {
-      font-size: 1.6rem;
-      font-weight: bold;
-    }
-
-    &.objective {
-      &::before {
-        content: 'Objective';
-      }
-    }
-
-    &.experience {
-      &::before {
-        content: 'Experience';
-      }
-    }
-
-    &.skills {
-      &::before {
-        content: 'Skills';
-      }
-    }
-  }
-
-  section {
-    header {
-      margin-top: 0.5rem;
-    }
-  }
-
-  ul, ol {
-    &.unstyled {
-      list-style-type: none;
-    }
-  }
-
-  .column,
-  .columns {
-    column-width: auto;
-
-    &.one {
-      column-count: 1;
-    }
-
-    &.two {
-      column-count: 2;
-    }
-  }
-
-  .skills {
-    ul {
-      padding-left: 0;
-
-      li {
-
-        padding-left: 1rem;
-
-        &::first-line {
-          padding-left: 1rem;
-        }
-
-        header {
-          display: inline-block;
-          font-weight: bold;
-
-          &::after {
-            content: ':';
-            padding-right: 1rem;
-          }
-        }
-      }
-    }
-  }
-
-  .accomplishments,
-  .responsibilities {
-    padding-left: 2rem;
-
-    li {
-      list-style-type: square;
-    }
-  }
-
-  .duration {
-    float: right;
-  }
-  small {
-    color: #666;
-    letter-spacing: 0.05rem;
-    padding-left: 0.5rem;
-  }
-  .meta,
-  .links {
-    break-inside: avoid;
-  }
-
-  .links {
-    a {
-      text-decoration: none;
-    }
+@media only print {
+  @page {
+    width: 8.5in;
+    height: 11in;
+    margin: 0.75in;
   }
 }
