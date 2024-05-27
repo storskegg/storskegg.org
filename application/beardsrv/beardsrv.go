@@ -1,9 +1,8 @@
 package beardsrv
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
+	"github.com/storskegg/storskegg.org/internal/server"
 )
 
 const cmdName = "beardsrv"
@@ -15,8 +14,8 @@ var cmdRoot = &cobra.Command{
 }
 
 func runRoot(cmd *cobra.Command, args []string) error {
-	fmt.Println("butts.")
-	return nil
+	srv := server.New(&server.Config{Addr: ":3001"}, cmd)
+	return srv.Serve()
 }
 
 func Run() error {
