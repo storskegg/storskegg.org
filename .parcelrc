@@ -1,0 +1,7 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{sass,scss}": ["@parcel/transformer-sass"],
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "storskegg_org",
+  "version": "0.0.1",
+  "description": "Personal site",
+  "browserslist": [
+    "> 5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "scripts": {
+    "dev::fe": "(rm -rf .parcel-cache || true) && NODE_ENV=development parcel src/index.html --open",
+    "dev::server": "(rm ./.browser.lock || true) && fresh && (rm ./.browser.lock || true)",
+    "build": "NODE_ENV=production parcel build src/index.html",
+    "watch": "NODE_ENV=development parcel watch src/index.html",
+    "dev": "NODE_ENV=development overmind start"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/storskegg/storskegg.org.git"
+  },
+  "keywords": [],
+  "authors": [
+    {
+      "name": "Liam Conrad",
+      "email": "liam@w4pho.net"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/storskegg/storskegg.org/issues"
+  },
+  "homepage": "https://storskegg.github.io",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-typescript-tsc": "^2.12.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/types": "^7.10.0",
+    "eslint": "^9.3.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "sass": "^1.77.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

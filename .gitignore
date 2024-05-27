@@ -1,0 +1,21 @@
+# distribution files
+dist/
+
+# ide things
+.idea/
+.vscode/
+
+# temp things
+.browser.lock
+.cache/
+.parcel-cache/
+.tmp/
+tmp/
+
+# vendor files
+node_modules/
+vendor/
+
+# os stupid files
+.DS_Store
+photostream
