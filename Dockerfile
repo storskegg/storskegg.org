@@ -1,7 +1,7 @@
 FROM alpine:3.11
 RUN apk add --no-cache nodejs npm go
 
-WORKDIR /photostream
+WORKDIR /storskegg.org
 COPY package.json .
 RUN npm i
 COPY . .
@@ -10,7 +10,7 @@ RUN go mod vendor
 RUN go build
 RUN echo $PATH
 
-ENTRYPOINT /photostream/photostream
+ENTRYPOINT /storskegg.org/beardsrv
 
 EXPOSE 3001
 
